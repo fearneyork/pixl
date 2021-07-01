@@ -13,9 +13,37 @@
   }
 }
 
-.App-header {
+.grid {
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.grid-box {
+  background-color: white;
+  height: 64px;
+  width: 64px;
+}
+
+.grid-box:hover {
+  cursor:pointer;
+}
+
+.grid-box-clicked {
+  background-color: black;
+}
+
+main {
+  display: flex;
+}
+
+body {
   background-color: #282c34;
-  min-height: 100vh;
+}
+
+.App-header {
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;

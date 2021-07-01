@@ -1,25 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
 
 function App() {
+
+  
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>pixl</h1>
       </header>
+      <main>
+        <section className="grid">
+          {
+            [...Array(64)].map(
+              (_value, index) => (
+                <CellItem key={index}/>
+              )
+            )
+          }
+        </section>
+
+      </main>
     </div>
   );
+}
+
+function CellItem() {
+  const [isBoxClicked, setIsBoxClicked]=useState(false);
+  return (
+<div className={`grid-box ${isBoxClicked ? 'grid-box-clicked':''}`} onClick={() => setIsBoxClicked(!isBoxClicked)}></div>
+
+  )
+
 }
 
 export default App;
